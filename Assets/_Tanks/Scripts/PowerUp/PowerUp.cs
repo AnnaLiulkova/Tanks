@@ -4,7 +4,7 @@ namespace Tanks.Complete
 {
     public class PowerUp : MonoBehaviour
     {
-        public enum PowerUpType { Speed, DamageReduction, ShootingBonus, Healing, Invincibility, DamageMultiplier }
+        public enum PowerUpType { Speed, DamageReduction, ShootingBonus, Healing, Invincibility, DamageMultiplier, SlowDown, ShootingPenalty }
         [Tooltip("Select the kind of Power Up that you want.")]
         [SerializeField] private PowerUpType m_PowerUpType = PowerUpType.DamageReduction;
 
@@ -72,7 +72,10 @@ namespace Tanks.Complete
                     // The power up increases the damage of the shell
                     else if (m_PowerUpType == PowerUpType.DamageMultiplier)
                         m_PowerUpDetector.PowerUpSpecialShell(m_DamageMultiplier);
-
+                    else if (m_PowerUpType == PowerUpType.SlowDown)
+                        m_PowerUpDetector.PowerUpSpeed(-8f, -90f, 5f);
+                    else if (m_PowerUpType == PowerUpType.ShootingPenalty)
+                        m_PowerUpDetector.PowerUpShootingPenalty(2.0f, m_DurationTime);
                     // Tells the spawner that the power up has been collected
                     if (m_Spawner != null)
                         m_Spawner.CollectPowerUp();

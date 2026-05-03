@@ -10,7 +10,6 @@ namespace Tanks.Complete
         [Tooltip("Time in seconds that will wait this spawner to instantiate a new power up when collected the new one.")]
         public float m_RespawnCooldown = 20f;
 
-
         private void Start()
         {
             // Spawn a random power up when the game starts.

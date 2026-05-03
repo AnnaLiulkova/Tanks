@@ -10,7 +10,8 @@ namespace Tanks.Complete
         [SerializeField] private GameObject m_EnhancedShellHUD;
         [SerializeField] private GameObject m_HealingHUD;
         [SerializeField] private GameObject m_TemporaryInvencibilityHUD;
-
+        [SerializeField] private GameObject m_SlowDownHUD;
+        [SerializeField] private GameObject m_ShootingPenaltyHUD;
         private GameObject m_ActivePowerUpHUD;
         private float m_DisplayTime;
         private bool m_HasActivePowerUp = false;
@@ -68,6 +69,14 @@ namespace Tanks.Complete
                 case PowerUp.PowerUpType.Invincibility:
                     m_TemporaryInvencibilityHUD.SetActive(true);
                     m_ActivePowerUpHUD = m_TemporaryInvencibilityHUD;
+                    break;
+                case PowerUp.PowerUpType.SlowDown:
+                    m_SlowDownHUD.SetActive(true);
+                    m_ActivePowerUpHUD = m_SlowDownHUD;
+                    break;
+                case PowerUp.PowerUpType.ShootingPenalty:
+                    m_ShootingPenaltyHUD.SetActive(true);
+                    m_ActivePowerUpHUD = m_ShootingPenaltyHUD;
                     break;
             }
             m_DisplayTime = duration;

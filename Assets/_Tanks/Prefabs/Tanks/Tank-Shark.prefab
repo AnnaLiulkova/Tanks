@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 52798762698908784}
   - component: {fileID: 8892603552204678872}
   - component: {fileID: -197794669023279177}
+  - component: {fileID: 7534444511224919292}
   m_Layer: 9
   m_Name: Tank-Shark
   m_TagString: Tank
@@ -308,7 +309,7 @@ MonoBehaviour:
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
   m_ShotCooldown: 1
-  m_MaxDamage: 80
+  m_MaxDamage: 60
   m_ExplosionForce: 300
   m_ExplosionRadius: 5
   m_InputUser: {fileID: 0}
@@ -325,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tanks.Complete.TankMovement
   m_PlayerNumber: 4
-  m_Speed: 6
+  m_Speed: 12
   m_TurnSpeed: 120
   m_IsDirectControl: 0
   m_MovementAudio: {fileID: 5960004763117956587}
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030896d0325fa3e4d8d7d4cfe2351cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tanks.Complete.TankHealth
-  m_StartingHealth: 200
+  m_StartingHealth: 225
   m_Slider: {fileID: 9075214169844977396}
   m_FillImage: {fileID: 565485919683710968}
   m_FullHealthColor: {r: 0, g: 1, b: 0.5529412, a: 1}
@@ -365,6 +366,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc25b6c35f0ec7f43ad6f047f3623ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tanks.Complete.TankAI
+--- !u!114 &7534444511224919292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41149865122271075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613fdb3d456dfe940b92c5fe402374b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tanks.Complete.PowerUpDetector
+  m_HasActivePowerUp: 0
 --- !u!1 &7077913508692322476
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +640,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 911267154310888329}
   - {fileID: 1646619233208169114}
   - {fileID: 5581521540089602205}
   m_Father: {fileID: 5396328034789757987}
@@ -815,6 +830,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9cb291b9205a86444b285015bd02d5d6, type: 3}
   m_PrefabInstance: {fileID: 138405054660560390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &716190803053490830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2694469339246327572}
+    m_Modifications:
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748525111975410004, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+      propertyPath: m_Name
+      value: PowerUpHUD
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+--- !u!4 &911267154310888329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 384234352903047431, guid: 54fa582ae599bb64dbdace48e15b1a83, type: 3}
+  m_PrefabInstance: {fileID: 716190803053490830}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4330089069239324387
 PrefabInstance:

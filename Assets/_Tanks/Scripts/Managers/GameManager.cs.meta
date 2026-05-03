@@ -1,15 +1,5 @@
 fileFormatVersion: 2
 guid: 54a000792783c934885973b761b3f96f
-timeCreated: 1441706275
-licenseType: Store
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 46209
@@ -17,3 +7,18 @@ AssetOrigin:
   packageVersion: 3.0
   assetPath: Assets/_Tanks/Scripts/Managers/GameManager.cs
   uploadId: 847542
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_CameraControl: {instanceID: 0}
+  - m_Tank1Prefab: {instanceID: 0}
+  - m_Tank2Prefab: {instanceID: 0}
+  - m_Tank3Prefab: {instanceID: 0}
+  - m_Tank4Prefab: {instanceID: 0}
+  - m_LevelParent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

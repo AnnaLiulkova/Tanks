@@ -32,7 +32,10 @@ namespace Tanks.Complete
         public bool IsOpen { get; set; }                    // Is the slot open (not join the game yet) or not (already assigned to p1/p2 or computer)
         public bool IsComputer { get; set; }                // Is the slot used by a computer controlled tank or a player controlled one
         
-        private Camera m_MenuCamera;                        // The Camera used to display the menu
+        private Camera m_MenuCamera; 
+       
+        [Header("Color Selection")]
+        public Color[] availableColors;                     // The Camera used to display the menu
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Awake()
@@ -66,7 +69,31 @@ namespace Tanks.Complete
             IsOpen = false;
             BackgroundImage.sprite = UsedSlotBackground;
         }
+        
+        
+        public void OnColorButtonClicked(int colorIndex)
+        {
+            if (availableColors == null || colorIndex < 0 || colorIndex >= availableColors.Length) 
+                return;
 
+            Color selectedColor = availableColors[colorIndex];
+            m_SlotColor = selectedColor; 
+
+            if (TankPreview != null)
+            {
+               MeshRenderer[] previewRenderers = TankPreview.GetComponentsInChildren<MeshRenderer>();
+               foreach (MeshRenderer r in previewRenderers)
+               {
+                  for (int j = 0; j < r.materials.Length; j++)
+                  {
+                    if (r.materials[j].name.Contains("TankColor"))
+                    {
+                       r.materials[j].color = selectedColor;
+                    }
+                  }
+               }
+            }
+        }
         public void RemoveTank()
         {
             m_AddControlButton.gameObject.SetActive(true);
